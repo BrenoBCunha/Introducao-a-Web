@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição em Evento com Campos Avançados</title>
+</head>
+<body>
+    <h1>Semana de Tecnologia IFAL</h1>
+    <p>* Campo obrigatório</p>
+    <form action="https://httpbin.org/post" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Identificação do Participante</legend>
+            <div class="campo">
+                <label for="nome">* Nome Compelto: </label>
+                <input type="text" name="nome" id="nome" required minlength="3" maxlength="100" autocomplete="nome" placeholder="Ex: José Maria">
+            </div>
+            <div class="campo">
+                <label for="email">* E-mail institucional: </label>
+                <input type="email" name="email" id="email" required maxlength="100" autocomplete="email" placeholder="usuario@aluno.ifal.edu.br">
+            </div>
+            <div class="campo">
+                <label for="cidade">Cideade de origem: </label>
+                <input type="text" name="cidade" id="cidade" list="sugestões_de_cidade" placeholder="Digite sua cideade...">
+                <datalist id="sugestões_de_cidade">
+                    <option value="Maceió">
+                    <option value="Arapiraca">
+                    <option value="Palmeira dos Índios">
+                    <option value="União dos Palmares">
+                    <option value="Delmiro Gouveia">
+                    <option value="Flexeiras">
+                    <option value="Murici">
+                    <option value="Piranhas">
+                    <option value="Marechal Deodoro"></option>
+                </datalist>
+            </div>
+            <div class="campo">
+                <label for="foto">Foto para cache: </label>
+                <input type="file" name="foto" id="foto" accept="image/jpeg,image/png" multiple aria-describedby="instrução">
+                <small id="instrução">Formatos aceitos: JPG e PNG. Tamanho máximo: 2 MB</small>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Preferências para o evento</legend>
+            
+        </fieldset>
+
+        <div class="campo">
+            <button type="submit">Confirmar Inscrição</button>
+        </div>
+    </form>
+
+    <p><a href="../index.html">← Voltar à página principal</a></p>
+</body>
+</html>

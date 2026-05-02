@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+</head>
+<body>
+    <form action="https://httpbin.org/post" method="post">
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            <div class="campo">
+                <label for="nome">* Nome completo: </label>
+                <input type="text" name="nome" id="nome" placeholder="Ex: José Maria" autocomplete="nome" required minlength="3" maxlength="100">
+            </div>
+            <div class="campo">
+                <label for="email">* E-mail: </label>
+                <input type="email" name="email" id="email" placeholder="usuario@dominio.com" autocomplete="email" required maxlength="100">
+            </div>
+            <div class="campo">
+                <label for="senha">* Senha: </label>
+                <input type="password" name="senha" id="senha" required pattern="(?=.*[A-Za-z])(?=.*\d).{8,}" title="Mínimo de 8 caracteres, incluindo ao menos uma letra e um número" minlength="8">  
+            </div>
+            <div class="campo">
+                <label for="nascimento">* Data de nascimento: </label>
+                <input type="date" name="nascimento" id="nascimento" min="1900-01-01" max="2026-01-01" required>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Genero</legend>
+            <div class="campo">
+                <label for="genero">
+                    <input type="radio" name="genero" id="genero" value="Masculino"> Masculino
+                    <input type="radio" name="genero" id="genero" value="Feminino"> Feminino
+                    <input type="radio" name="genero" id="genero" value="Outro"> Outro
+                    <input type="radio" name="genero" id="genero" value="Prefiro não informar"> Prefiro não informar
+                </label>
+            </div>
+        </fieldset>
+
+        <div class="campo">
+            <label>
+            <input type="checkbox" name="aceite" value="sim" required />
+            * Li e aceito os <a href="/termos">termos de uso</a>
+            </label>
+        </div>
+        <p>* Campos obrigatórios</p>
+        <div class="campo">
+            <button type="submit">Criar conta</button>
+            <button type="reset">Limpar campos</button>
+        </div>
+    </form>
+
+    <p><a href="../index.html">← Voltar à página principal</a></p>
+</body>
+</html>
