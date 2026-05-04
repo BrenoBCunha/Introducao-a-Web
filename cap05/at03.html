@@ -3,86 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Matrícula Acadêmica</title>
+    <title>PWEB1 — Cap. 05 — AT03 — Formulário de Matrícula Acadêmica</title>
 </head>
 <body>
-    <p>* Campos obrigatórios</p>
-    <form action="https://httpbin.org/post" method="post">
-    <fieldset>
-        <legend>Dados Pessoais</legend>
-        <div class="campo">
-            <label for="nome">* Nome: </label>
-            <input type="text", name="nome" id="nome" required minlength="5" maxlength="100" autocorrect="name" placeholder="EX: José Maria">
-        </div>
-        <div class="campo">
-            <label for="cpf">* CPF: </label>
-            <input type="text" name="cpf" id="cpf" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00" title="CPF no formato 000.000.000-00" autocomplete="cpf">
-        </div>
-        <div class="campo">
-            <label for="Telefone">Telefone: </label>
-            <input type="tel" name="Telefone" id="Telefone" pattern="\(\d{2}\)\s\d{4,5}-\d{4}" placeholder="(82) 99999-9999" autocomplete="tel" maxlength="15" title="Telefone no formato (82) 99999-9999">
-        </div>
-        <div class="campo">
-            <label for="email">Email: </label>
-            <input type="email" name="email" id="email" required maxlength="100" autocomplete="email" placeholder="usuario@dominio.com">
-        </div>
-    </fieldset>
-    <fieldset>
-        <legend>Dados Acadêmicos</legend>
-        <div class="campo">
-            <label for="curso">* Curso: </label>
-            <select name="curso" id="curso" required>
-                <option value="">Selecione...</option>
-                <optgroup label="Computação">
-                    <option value="Sistemas de Informação"> Sistemas de Informação</option>
-                    <option value="Ciência da Computação">Ciência da Computação</option>
-                    <option value="Engenharia da Computação">Engenharia da Computação</option>
-                </optgroup>
-                <optgroup label="Gestão">
-                    <option value="Administração">Administração</option>
-                    <option value="Ciências Contábeis">Ciências Contábeis</option>
-                </optgroup>
-                <optgroup label="Saúde">
-                    <option value="Medicina">Medicina</option>
-                    <option value="Enfermagem">Enfermagem</option>
-                    <option value="Nutrição">Nutrição</option>
-                </optgroup>
-                <optgroup label="Licenciatura">
-                    <option value="Física">Física</option>
-                    <option value="Matemática">Matemática</option>
-                    <option value="Biologia">Biologia</option>
-                    <option value="Química">Química</option>
-                </optgroup>
-            </select>
-        </div>
+    <header>
+        <h1>Formulário de Matrícula Acadêmica</h1>
+        <p><a href="../index.html">← Voltar à página principal</a></p>
+        <small>* Campos obrigatórios</small>
+    </header>
+    <main>
+        <form action="https://httpbin.org/post" method="post">
         <fieldset>
-            <legend>* Periodo</legend>
-            <label for="periodo">
-                <input type="radio" name="periodo" id="periodo" value="manhã"> Manhã 
-                <input type="radio" name="periodo" id="periodo" value="tarde"> Tarde
-                <input type="radio" name="periodo" id="periodo" value="noite"> Noite    
+            <legend>Dados Pessoais</legend>
+            <div class="campo">
+                <label for="nome">* Nome: </label>
+                <input 
+                type="text" 
+                name="nome" 
+                id="nome" 
+                required 
+                minlength="5" 
+                maxlength="100" 
+                autocomplete="nome"
+                placeholder="EX: José Maria">
+            </div>
+            <div class="campo">
+                <label for="cpf">* CPF: </label>
+                <input 
+                type="text" 
+                name="cpf" 
+                id="cpf" 
+                required 
+                pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" 
+                placeholder="000.000.000-00" 
+                title="CPF no formato 000.000.000-00" 
+                autocomplete="cpf">
+            </div>
+            <div class="campo">
+                <label for="Telefone">Telefone: </label>
+                <input 
+                type="tel" 
+                name="Telefone" 
+                id="Telefone" 
+                pattern="\(\d{2}\)\s\d{4,5}-\d{4}" 
+                placeholder="(82) 99999-9999" 
+                autocomplete="tel" 
+                maxlength="15" 
+                title="Telefone no formato (82) 99999-9999">
+            </div>
+            <div class="campo">
+                <label for="email">Email: </label>
+                <input 
+                type="email" 
+                name="email" 
+                id="email" 
+                required 
+                maxlength="100" 
+                autocomplete="email" 
+                placeholder="usuario@dominio.com">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Dados Acadêmicos</legend>
+            <div class="campo">
+                <label for="curso">* Curso: </label>
+                <select name="curso" id="curso" required>
+                    <option value="">Selecione...</option>
+                    <optgroup label="Computação">
+                        <option value="Sistemas de Informação"> Sistemas de Informação</option>
+                        <option value="Ciência da Computação">Ciência da Computação</option>
+                        <option value="Engenharia da Computação">Engenharia da Computação</option>
+                    </optgroup>
+                    <optgroup label="Gestão">
+                        <option value="Administração">Administração</option>
+                        <option value="Ciências Contábeis">Ciências Contábeis</option>
+                    </optgroup>
+                    <optgroup label="Saúde">
+                        <option value="Medicina">Medicina</option>
+                        <option value="Enfermagem">Enfermagem</option>
+                        <option value="Nutrição">Nutrição</option>
+                    </optgroup>
+                    <optgroup label="Licenciatura">
+                        <option value="Física">Física</option>
+                        <option value="Matemática">Matemática</option>
+                        <option value="Biologia">Biologia</option>
+                        <option value="Química">Química</option>
+                    </optgroup>
+                </select>
+            </div>
+            <fieldset>
+                <legend>* Periodo</legend>
+                <label for="periodo">
+                    <input type="radio" name="periodo" id="periodo" value="manhã"> Manhã
+                    <input type="radio" name="periodo" id="periodo" value="tarde"> Tarde
+                    <input type="radio" name="periodo" id="periodo" value="noite"> Noite
+                </label>
+            </fieldset>
+            <div class="campo">
+                <label for="ano_ingresso">* Ano de ingresso:</label>
+                <input type="number" name="ano_ingresso" id="ano_ingresso" required min="2025" max="2030">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Áreas de Interesse</legend>
+            <label for="Interesse[]">
+                <input type="checkbox" name="Interesse[]" id="Interesse[]" value="Desenvolvimento_web">Desenvolvimento web
+                <input type="checkbox" name="Interesse[]" id="Interesse[]" value="inteligencia_artificial">Inteligencia Artificial
+                <input type="checkbox" name="Interesse[]" id="interesse[]" value="segurança_da_informação">Segurança da Informação
+                <input type="checkbox" name="Interesse[]" id="Interesse[]" value="Infraestrutura">Infraestrutura
             </label>
         </fieldset>
         <div class="campo">
-            <label for="ano_ingresso">* Ano de ingresso:</label>
-            <input type="number" name="ano_ingresso" id="ano_ingresso" required min="2025" max="2030">
+            <button type="submit">Solicitar Matrícula</button>
+            <button type="reset">Limpar Formulário</button>
         </div>
-    </fieldset>
-    <fieldset>
-        <legend>Áreas de Interesse</legend>
-        <label for="Interesse[]">
-            <input type="checkbox" name="Interesse[]" id="Interesse[]" value="Desenvolvimento_web">Desenvolvimento web
-            <input type="checkbox" name="Interesse[]" id="Interesse[]" value="inteligencia_artificial">Inteligencia Artificial
-            <input type="checkbox" name="Interesse[]" id="interesse[]" value="segurança_da_informação">Segurança da Informação
-            <input type="checkbox" name="Interesse[]" id="Interesse[]" value="Infraestrutura">Infraestrutura
-        </label>
-    </fieldset>
-    <div class="campo">
-        <button type="submit">Solicitar Matrícula</button>
-        <button type="reset">Limpar Formulário</button>
-    </div>
-    </form>
-
-    <p><a href="../index.html">← Voltar à página principal</a></p>
+        </form>
+    </main>
+    
 </body>
 </html>

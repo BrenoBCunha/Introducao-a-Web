@@ -3,53 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscrição em Evento com Campos Avançados</title>
+    <title>PWEB1 — Cap. 05 — AT04 — Inscrição em Evento com Campos Avançados</title>
 </head>
 <body>
-    <h1>Semana de Tecnologia IFAL</h1>
-    <p>* Campo obrigatório</p>
-    <form action="https://httpbin.org/post" method="post" enctype="multipart/form-data">
-        <fieldset>
-            <legend>Identificação do Participante</legend>
+    <header>
+        <h1>Semana de Tecnologia IFAL</h1>
+        <p><a href="../index.html">← Voltar à página principal</a></p>
+        <p>* Campo obrigatório</p>
+    </header>
+    <main>
+        <form action="https://httpbin.org/post" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Identificação do Participante</legend>
+                <div class="campo">
+                    <label for="nome">* Nome Compelto: </label>
+                    <input
+                    type="text"
+                    name="nome"
+                    id="nome"
+                    required
+                    minlength="3"
+                    maxlength="100"
+                    autocomplete="nome"
+                    placeholder="Ex: José Maria">
+                </div>
+                <div class="campo">
+                    <label for="email">* E-mail institucional: </label>
+                    <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    required
+                    maxlength="100"
+                    autocomplete="email"
+                    placeholder="usuario@aluno.ifal.edu.br">
+                </div>
+                <div class="campo">
+                    <label for="cidade">Cideade de origem: </label>
+                    <input
+                    type="text"
+                    name="cidade"
+                    id="cidade"
+                    list="sugestões_de_cidade"
+                    placeholder="Digite sua cideade...">
+                    <datalist id="sugestões_de_cidade">
+                        <option value="Maceió">
+                        <option value="Arapiraca">
+                        <option value="Palmeira dos Índios">
+                        <option value="União dos Palmares">
+                        <option value="Delmiro Gouveia">
+                        <option value="Flexeiras">
+                        <option value="Murici">
+                        <option value="Piranhas">
+                        <option value="Marechal Deodoro"></option>
+                    </datalist>
+                </div>
+                <div class="campo">
+                    <label for="foto">Foto para cache: </label>
+                    <input
+                    type="file"
+                    name="foto"
+                    id="foto"
+                    accept="image/jpeg,image/png"
+                    multiple
+                    aria-describedby="instrução">
+                    <small id="instrução">Formatos aceitos: JPG e PNG. Tamanho máximo: 2 MB</small>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Preferências para o evento</legend>
+                <div class="campo">
+                    <label for="chegada">Data e hora preferida para chegada: </label>
+                    <input type="datetime-local" name="chegada" id="chegada">
+                </div>
+                <div class="campo">
+                    <label for="experiencia">Nível de experiencia em programação: <span id="valor-experiencia">5</span>/10</label>
+                    <input
+                    type="range"
+                    name="experiencia"
+                    id="experiencia"
+                    min="0"
+                    max="10"
+                    step="1"
+                    value="5"
+                    oninput="document.getElementById('valor-experiencia').textContent = this.value">
+                </div>
+                <div class="campo">
+                    <label for="cor_camiseta">Cor de preferência para a camiseta: </label>
+                    <input type="color" name="cor_camiseta" id="cor_camiseta" value="#1a73e8">
+                </div>
+                <div class="campo">
+                    <label for="oficinas">Oficinas de interesse: </label>
+                    <select name="oficinas[]" id="oficinas" multiple size="4" aria-describedby="instru">
+                        <option value="Desenvolvimento e engenharia de software">Desenvolvimento e engenharia de software</option>
+                        <option value="Inteligência artificial e automações">Inteligência artificial e automações</option>
+                        <option value="Business inteligence e dados">Business inteligence e dados</option>
+                        <option value="Produto, UX e design">Produto, UX e design</option>
+                        <option value="Empreendedorismo, gestão e negócios">Empreendedorismo, gestão e negócios</option>
+                        <option value="Inovação corporativa e startups">Inovação corporativa e startups</option>
+                    </select>
+                    <small id="instru">Use Ctrl (ou Cmd no Mac) para selecionar mais de uma oficina.</small>
+        
+                </div>
+            </fieldset>
+            <input type="hidden" name="edicao" value="2026" />
             <div class="campo">
-                <label for="nome">* Nome Compelto: </label>
-                <input type="text" name="nome" id="nome" required minlength="3" maxlength="100" autocomplete="nome" placeholder="Ex: José Maria">
+                <button type="submit">Confirmar Inscrição</button>
             </div>
-            <div class="campo">
-                <label for="email">* E-mail institucional: </label>
-                <input type="email" name="email" id="email" required maxlength="100" autocomplete="email" placeholder="usuario@aluno.ifal.edu.br">
-            </div>
-            <div class="campo">
-                <label for="cidade">Cideade de origem: </label>
-                <input type="text" name="cidade" id="cidade" list="sugestões_de_cidade" placeholder="Digite sua cideade...">
-                <datalist id="sugestões_de_cidade">
-                    <option value="Maceió">
-                    <option value="Arapiraca">
-                    <option value="Palmeira dos Índios">
-                    <option value="União dos Palmares">
-                    <option value="Delmiro Gouveia">
-                    <option value="Flexeiras">
-                    <option value="Murici">
-                    <option value="Piranhas">
-                    <option value="Marechal Deodoro"></option>
-                </datalist>
-            </div>
-            <div class="campo">
-                <label for="foto">Foto para cache: </label>
-                <input type="file" name="foto" id="foto" accept="image/jpeg,image/png" multiple aria-describedby="instrução">
-                <small id="instrução">Formatos aceitos: JPG e PNG. Tamanho máximo: 2 MB</small>
-            </div>
-        </fieldset>
-        <fieldset>
-            <legend>Preferências para o evento</legend>
-            
-        </fieldset>
-
-        <div class="campo">
-            <button type="submit">Confirmar Inscrição</button>
-        </div>
-    </form>
-
-    <p><a href="../index.html">← Voltar à página principal</a></p>
+        </form>
+    </main>
+    
 </body>
 </html>

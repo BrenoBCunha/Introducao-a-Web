@@ -3,39 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AT01 — Formulário de Contato Simples</title>
+    <title>PWEB1 — Cap. 05 — AT01 — Formulário de Contato Simples</title>
 </head>
 <body>
-
-      <form action="https://httpbin.org/get" method="get">
-        <fieldset>
-          <legend>Informações pessoais</legend>
-          <div>
-            <label for="nome">* Nome: </label>
-            <input type="text" name="nome" id="nome" placeholder="Ex: José Maria" autocomplete="nome" required minlength="3" maxlength="100">
-          </div>
-          <div>
-            <label for="email">* E-mail: </label>
-            <input type="email" name="email" id="email" placeholder="usuario@dominio.com" autocomplete="email" required maxlength="100">
-          </div>
-        </fieldset>
-
-        <fieldset>
-          <legend>Mensagem</legend>
-          <div>
-            <label for="assunto">* Assunto: </label>
-            <input type="text" name="assunto" id="assunto" placeholder="Ex: requerimento de permuta" required maxlength="100">
-          </div>
-          <div>
-            <label for="mensagem">* Mensagem: </label>
-            <textarea name="mensagem" id="mensagem" rows="5" cols="80" placeholder="Escreva sua duvida com detalhes" maxlength="1000" required></textarea>
-          </div>
-        </fieldset>
-        <p>* Campos obrigatórios</p>
-        <button type="submit"> Enviar mensagem</button>
-        
-      </form>
-
-    <p><a href="../index.html">← Voltar à página principal</a></p>
+      <header>
+        <h1>Formulário de Contato Simples</h1>
+        <p><a href="../index.html">← Voltar à página principal</a></p>
+        <small>* Campos obrigatórios</small>
+      </header>
+      <main>
+        <form action="https://httpbin.org/get" method="get">
+          <fieldset>
+            <legend>Informações pessoais</legend>
+            <div class="campo">
+              <label for="nome">* Nome: </label>
+              <input 
+              type="text" 
+              name="nome" 
+              id="nome" 
+              placeholder="Ex: José Maria" 
+              autocomplete="nome" 
+              required 
+              minlength="3" 
+              maxlength="100">
+            </div>
+            <div class="campo">
+              <label for="email">* E-mail: </label>
+              <input 
+              type="email" 
+              name="email" 
+              id="email" 
+              placeholder="usuario@dominio.com" 
+              autocomplete="email" 
+              required 
+              maxlength="100">
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Mensagem</legend>
+            <div class="campo">
+              <label for="assunto">* Assunto: </label>
+              <input 
+              type="text" 
+              name="assunto" 
+              id="assunto" 
+              placeholder="Ex: requerimento de permuta" 
+              required 
+              maxlength="100">
+            </div>
+            <div class="campo">
+              <label for="mensagem">* Mensagem: </label>
+              <textarea 
+              name="mensagem" 
+              id="mensagem" 
+              rows="5" cols="80" 
+              placeholder="Escreva sua duvida com detalhes" maxlength="1000" 
+              required></textarea>
+            </div>
+          </fieldset>
+          <button type="submit"> Enviar mensagem</button>
+        </form>
+      </main>
 </body>
 </html>
