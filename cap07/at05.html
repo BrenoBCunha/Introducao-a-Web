@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PWEB1 - AT05 - System Design</title>
+  <!-- Vinculação única do CSS como exigido -->
+  <link rel="stylesheet" href="../css/cap07/at05-style.css">
+</head>
+<body>
+    <header>
+        <h1>Mini Design System</h1>
+        <div class="voltar">
+            <p><a href="../index.html">Voltar</a></p>
+        </div>
+    </header>
+  <!-- Componente 1: Hero -->
+  <section class="hero">
+    <h1 class="hero__titulo">Design System</h1>
+    <p class="hero__subtitulo">Um guia de estilos minimalista, escalável e focado em produtividade para interfaces web.</p>
+    <a href="#componentes" class="btn btn--primario hero__cta">Explorar Componentes</a>
+  </section>
+
+  <main id="componentes" class="container">
+    
+    <!-- Componente 2: Botões -->
+    <section style="margin-bottom: var(--espaco-xl);">
+      <h2 class="section-title">2. Botões</h2>
+      <div class="botoes" style="display: flex; gap: var(--espaco-md); flex-wrap: wrap;">
+        <button class="btn btn--primario">Ação principal</button>
+        <button class="btn btn--secundario">Ação secundária</button>
+        <button class="btn btn--perigo">Ação destrutiva</button>
+        <button class="btn btn--primario" disabled>Desabilitado</button>
+      </div>
+    </section>
+
+    <!-- Componente 3: Cartão Posicionado -->
+    <section style="margin-bottom: var(--espaco-xl);">
+      <h2 class="section-title">3. Cartões (Cards)</h2>
+      <article class="card">
+        <span class="card__badge">Novo</span>
+        <div class="card__imagem"></div>
+        <div class="card__corpo">
+          <h3 class="card__titulo">Interface Moderna</h3>
+          <p class="card__texto">Componentes criados utilizando os padrões mais recentes do CSS com BEM e variáveis responsivas.</p>
+          <a class="card__link" href="#">Documentação completa →</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- Componente 4: Tabela de Tokens -->
+    <section style="margin-bottom: var(--espaco-xl);">
+      <h2 class="section-title">4. Paleta de Cores (Tokens)</h2>
+      <table class="table-cores">
+        <thead>
+          <tr>
+            <th>Cor</th>
+            <th>Nome BEM / Variável</th>
+            <th>Hexadecimal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="table-cores__amostra" style="background-color: var(--cor-primaria);"></div></td>
+            <td>--cor-primaria</td>
+            <td>#2563eb</td>
+          </tr>
+          <tr>
+            <td><div class="table-cores__amostra" style="background-color: var(--cor-secundaria);"></div></td>
+            <td>--cor-secundaria</td>
+            <td>#4f46e5</td>
+          </tr>
+          <tr>
+            <td><div class="table-cores__amostra" style="background-color: var(--cor-destaque);"></div></td>
+            <td>--cor-destaque</td>
+            <td>#f59e0b</td>
+          </tr>
+          <tr>
+            <td><div class="table-cores__amostra" style="background-color: var(--cor-sucesso);"></div></td>
+            <td>--cor-sucesso</td>
+            <td>#10b981</td>
+          </tr>
+          <tr>
+            <td><div class="table-cores__amostra" style="background-color: var(--cor-erro);"></div></td>
+            <td>--cor-erro</td>
+            <td>#ef4444</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Componente 5: Formulário -->
+    <section style="margin-bottom: var(--espaco-xl);">
+      <h2 class="section-title">5. Formulários</h2>
+      <form class="form" action="#" onsubmit="event.preventDefault();">
+        
+        <div class="form__grupo">
+          <label class="form__label" for="nome">Nome Completo</label>
+          <input class="form__input" type="text" id="nome" placeholder="Digite seu nome" required>
+          <span class="form__mensagem-erro">Este campo é obrigatório.</span>
+        </div>
+
+        <div class="form__grupo">
+          <label class="form__label" for="email">E-mail de contato</label>
+          <input class="form__input" type="email" id="email" placeholder="exemplo@email.com" required>
+          <span class="form__mensagem-erro">Insira um e-mail válido.</span>
+        </div>
+
+        <div class="form__grupo">
+          <label class="form__label" for="assunto">Assunto (Opcional)</label>
+          <input class="form__input" type="text" id="assunto" placeholder="Qual o motivo do contato?">
+        </div>
+
+        <button type="submit" class="btn btn--primario form__botao">Enviar Mensagem</button>
+      </form>
+    </section>
+
+  </main>
+</body>
+</html>

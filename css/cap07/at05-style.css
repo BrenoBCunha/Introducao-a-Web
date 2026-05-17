@@ -1,0 +1,305 @@
+@import url('at05-reset.css');
+@import url('at05-variables.css');
+
+/* ─── Configurações Gerais ─────────────────────── */
+body {
+  font-family: var(--fonte-base);
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+}
+
+header {
+    background-color: var(--cor-primaria);
+    color: white;
+    height: 6rem;
+}
+
+.voltar {
+    margin-left: 1rem;
+    margin-top: 10px;
+    width: 80px;
+    height: 35px;
+    background-color: var(--cor-fundo-alt);
+    align-items: center;
+    border-radius: var(--raio-lg);
+    justify-content: center;
+    padding: 7px;
+    display: flex;
+}
+
+.voltar a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+
+}
+
+h1, h2, h3, .hero__titulo {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+header h1 {
+    margin-left: 1rem;
+}
+
+.container {
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: var(--espaco-lg) var(--espaco-md);
+}
+
+.section-title {
+  font-size: var(--texto-h2);
+  margin-bottom: var(--espaco-lg);
+  border-bottom: 2px solid var(--cor-primaria);
+  display: inline-block;
+  padding-bottom: var(--espaco-xs);
+}
+
+/* ─── Componente 1: Hero ───────────────────────── */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--espaco-md);
+  background-image: linear-gradient(rgba(31, 41, 55, 0.7), rgba(31, 41, 55, 0.9)), 
+                    url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1920&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--cor-texto-claro);
+}
+
+.hero__titulo {
+  font-size: var(--texto-display);
+  margin-bottom: var(--espaco-sm);
+}
+
+.hero__subtitulo {
+  font-size: var(--texto-h3);
+  margin-bottom: var(--espaco-lg);
+  font-weight: 400;
+  max-width: 800px;
+}
+
+/* ─── Componente 2: Botões ─────────────────────── */
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--espaco-sm) var(--espaco-lg);
+  border: none;
+  border-radius: var(--raio-md);
+  font-family: var(--fonte-base);
+  font-size: var(--texto-base);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transicao);
+}
+
+.btn--primario {
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto-claro);
+}
+
+.btn--secundario {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-texto-claro);
+}
+
+.btn--perigo {
+  background-color: var(--cor-erro);
+  color: var(--cor-texto-claro);
+}
+
+/* Estados */
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-md);
+  filter: brightness(1.1);
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--cor-destaque);
+  outline-offset: 2px;
+}
+
+.btn:disabled {
+  background-color: #9ca3af;
+  color: #e5e7eb;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  filter: none;
+}
+
+/* ─── Componente 3: Cartão (Card) ──────────────── */
+.card {
+  position: relative; 
+  background-color: var(--cor-fundo-alt);
+  border-radius: var(--raio-lg);
+  overflow: hidden;
+  box-shadow: var(--sombra-sm);
+  transition: transform var(--transicao), box-shadow var(--transicao);
+  max-width: 350px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sombra-lg);
+}
+
+.card__badge {
+  position: absolute;
+  top: var(--espaco-md);
+  right: var(--espaco-md);
+  background-color: var(--cor-destaque);
+  color: var(--cor-texto-claro);
+  padding: var(--espaco-xs) var(--espaco-sm);
+  font-size: var(--texto-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: var(--raio-sm);
+  z-index: 10;
+}
+
+.card__imagem {
+  height: 200px;
+  background-color: var(--cor-primaria);
+  background-image: linear-gradient(45deg, var(--cor-primaria), var(--cor-secundaria));
+}
+
+.card__corpo {
+  padding: var(--espaco-md);
+}
+
+.card__titulo {
+  font-size: var(--texto-h3);
+  margin-bottom: var(--espaco-xs);
+}
+
+.card__texto {
+  font-size: var(--texto-base);
+  color: #4b5563;
+  margin-bottom: var(--espaco-md);
+}
+
+.card__link {
+  color: var(--cor-primaria);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transicao);
+}
+
+.card__link:hover {
+  color: var(--cor-secundaria);
+}
+
+/* ─── Componente 4: Tabela de Cores ────────────── */
+.table-cores {
+  width: 100%;
+  max-width: 600px;
+  border-collapse: collapse;
+  background-color: var(--cor-fundo-alt);
+  box-shadow: var(--sombra-sm);
+  border-radius: var(--raio-md);
+  overflow: hidden;
+}
+
+.table-cores th,
+.table-cores td {
+  padding: var(--espaco-md);
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table-cores th {
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto-claro);
+  font-weight: 600;
+}
+
+.table-cores tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.table-cores__amostra {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--raio-sm);
+  border: 1px solid #d1d5db;
+}
+
+/* ─── Componente 5: Formulário ─────────────────── */
+.form {
+  background-color: var(--cor-fundo-alt);
+  padding: var(--espaco-lg);
+  border-radius: var(--raio-md);
+  box-shadow: var(--sombra-md);
+  max-width: 500px;
+}
+
+.form__grupo {
+  margin-bottom: var(--espaco-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.form__label {
+  font-weight: 600;
+  margin-bottom: var(--espaco-xs);
+  font-size: var(--texto-sm);
+}
+
+.form__input {
+  padding: var(--espaco-sm);
+  border: 2px solid #d1d5db;
+  border-radius: var(--raio-sm);
+  font-size: var(--texto-base);
+  transition: border-color var(--transicao), box-shadow var(--transicao);
+}
+
+.form__input::placeholder {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.form__input:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* Valid/Invalid + Required */
+.form__input:required {
+  border-left: 4px solid var(--cor-destaque);
+}
+
+.form__input:not(:placeholder-shown):valid {
+  border-color: var(--cor-sucesso);
+}
+
+.form__input:not(:placeholder-shown):invalid {
+  border-color: var(--cor-erro);
+}
+
+.form__mensagem-erro {
+  display: none;
+  color: var(--cor-erro);
+  font-size: var(--texto-xs);
+  margin-top: var(--espaco-xs);
+}
+
+.form__input:not(:placeholder-shown):invalid ~ .form__mensagem-erro {
+  display: block;
+}
+
+.form__botao {
+  width: 100%;
+  margin-top: var(--espaco-sm);
+}

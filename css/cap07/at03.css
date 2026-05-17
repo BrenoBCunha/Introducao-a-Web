@@ -189,6 +189,7 @@ li {
   content: '"';
   font-size: 2rem;
   color: #123354;
+  font-family: serif;
   vertical-align: middle;
   margin-left: 5px;
 }
@@ -248,8 +249,13 @@ div {
     background: linear-gradient(to right, #049eea, #20c2fc);
     border-radius: 15px;
     padding: 1rem;
+    padding-left: 20px;
     width: 255px;
     margin: auto;
     margin-bottom: 15px;
+}
+
+div a {
+  text-decoration: none;
 }
 

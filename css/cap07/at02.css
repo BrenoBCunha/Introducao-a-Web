@@ -93,3 +93,7 @@ div {
     width: 255px;
     margin: auto;
 }
+
+div a {
+  text-decoration: none;
+}

@@ -1,0 +1,50 @@
+:root {
+  /* ── Paleta de cores ── */
+  --cor-primaria:    #2563eb; /* Azul Royal */
+  --cor-secundaria:  #4f46e5; /* Índigo */
+  --cor-destaque:    #f59e0b; /* Âmbar */
+  --cor-sucesso:     #10b981; /* Verde */
+  --cor-erro:        #ef4444; /* Vermelho */
+  --cor-texto:       #1f2937; /* Cinza Escuro */
+  --cor-texto-claro: #f9fafb; /* Quase Branco */
+  --cor-fundo:       #f3f4f6; /* Cinza Claro */
+  --cor-fundo-alt:   #ffffff; /* Branco */
+
+  /* ── Tipografia ── */
+  --fonte-base:    'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --fonte-titulo:  'Inter', 'Segoe UI', Roboto, sans-serif;
+
+  /* ── Tamanhos de fonte (clamp obrigatório nos dois primeiros) ── */
+  --texto-display: clamp(2rem, 5vw, 4rem);
+  --texto-h1:      clamp(1.75rem, 4vw, 3rem);
+  --texto-h2:      2rem;
+  --texto-h3:      1.5rem;
+  --texto-base:    1rem;
+  --texto-sm:      0.875rem;
+  --texto-xs:      0.75rem;
+
+  /* ── Espaçamento ── */
+  --espaco-xs: 0.25rem;
+  --espaco-sm: 0.5rem;
+  --espaco-md: 1rem;
+  --espaco-lg: 2rem;
+  --espaco-xl: 4rem;
+
+  /* ── Bordas ── */
+  --raio-sm:     4px;
+  --raio-md:     8px;
+  --raio-lg:     16px;
+  --raio-circulo: 9999px;
+
+  /* ── Sombras ── */
+  --sombra-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+  --sombra-md: 0 4px 6px rgba(0, 0, 0, 0.10);
+  --sombra-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+  /* ── Transições ── */
+  --transicao: 200ms ease-in-out;
+
+  /* ── Layout ── */
+  --largura-max: 1200px;
+  --altura-nav:  4rem;
+}
