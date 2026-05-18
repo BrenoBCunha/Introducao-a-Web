@@ -86,14 +86,17 @@ footer p {
   color: white;
 }
 
-div {
+.voltar {
     background: linear-gradient(to right, #049eea, #20c2fc);
     border-radius: 15px;
-    padding: 1rem;
-    width: 255px;
+    padding: 10px;
+    max-width: 255px;
     margin: auto;
+    margin-top: 1rem;
 }
 
-div a {
-  text-decoration: none;
+.voltar a {
+    text-align: center;
+    text-decoration: none;
 }
+

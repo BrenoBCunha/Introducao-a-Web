@@ -248,10 +248,11 @@ li {
 div {
     background: linear-gradient(to right, #049eea, #20c2fc);
     border-radius: 15px;
-    padding: 1rem;
+    padding: 10px;
     padding-left: 20px;
     width: 255px;
     margin: auto;
+    margin-top: 15px;
     margin-bottom: 15px;
 }
 

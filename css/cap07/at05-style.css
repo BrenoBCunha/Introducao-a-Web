@@ -17,7 +17,7 @@ header {
 .voltar {
     margin-left: 1rem;
     margin-top: 10px;
-    width: 80px;
+    width: 255px;
     height: 35px;
     background-color: var(--cor-fundo-alt);
     align-items: center;
