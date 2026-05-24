@@ -1,0 +1,276 @@
+/* Importação de fonte pixelada */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jersey+10&display=swap');
+
+@font-face {
+    font-family: w98;
+    src: url(fonts/FRAHV.TTF) format(truetype);
+}
+@font-face {
+    font-family: MSbold;
+    src: url(fonts/MS\ Sans\ Serif\ Bold.ttf) format(truetype);
+}
+@font-face {
+    font-family: MS;
+    src: url(fonts/MS\ Sans\ Serif.ttf) format(truetype);
+}
+
+/* --- VARIÁVEIS --- */
+:root {
+    --win-bg: #c0c0c0;
+    --win-text: #000000;
+    --title-bar-bg: #0000aa;
+    --title-bar-text: #ffffff;
+    --border-light: #ffffff;
+    --border-dark: #000000;
+    --border-mid: #808080;
+    --border-mid-light: #dfdfdf;
+    --page-pad: 10px;
+    --page-gap: 15px;
+}
+
+/* --- RESET E BASE --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Fundo */
+    background: #008080;
+    font-family: 'MS', 'MS Sans Serif', Tahoma, Arial, sans-serif;
+    color: var(--win-text);
+    line-height: 1.4;
+    font-size: 14px;
+    overflow-x: hidden; 
+}
+
+a {
+    color: #0000ff;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #ff0000;
+}
+
+/* --- MOBILE  --- */
+.page-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        'header'
+        'article'
+        'sidebar'
+        'footer';
+    gap: var(--page-gap);
+    padding: var(--page-pad);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- DESKTOPS --- */
+@media (min-width: 900px) {
+    :root {
+        --page-pad: 20px;
+        --page-gap: 20px;
+    }
+    
+    .page-wrapper {
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: 
+            'header header'
+            'article sidebar'
+            'footer footer';
+        align-items: start;
+    }
+
+    header {
+        grid-template-columns: 3fr 1fr; 
+        align-items: center;
+    }
+
+    header h1 {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    header h2 {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        align-self: start;
+    }
+
+    .voltar {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3; 
+        max-width: none; 
+        margin: 0; 
+    }
+}
+
+/* Mapeamento das áreas */
+.intro { grid-area: header; }
+.main { grid-area: article; }
+.sidebar { grid-area: sidebar; }
+footer { grid-area: footer; }
+
+/* --- HEADER FULL-SCREEN (100VW / 100VH) --- */
+.intro {
+    background: #008080 url(images/windows-xp-pixel-art-by-v0-02dw11nuqf681.webp) no-repeat center center fixed;
+    background-size: cover;
+    image-rendering: pixelated;
+    width: 100vw;
+    min-height: 100vh; 
+    margin-left: calc(-50vw + 50%); 
+    margin-top: calc(var(--page-pad) * -1); 
+    padding: 20px 5vw;
+    /* Centraliza o conteúdo no meio da tela usando Grid */
+    display: grid;
+    align-content: center;
+}
+
+header {
+    margin: -2px -2px 10px -2px;
+    display: grid;
+}
+
+header h1 {
+    font-size: clamp(40px, 8vw, 100px); 
+    font-family: 'Jersey 10', 'MSbold', 'w98', 'MS sans serif';
+    font-weight: bold;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+}
+
+header h2 {
+    font-size: clamp(8px, 3vw, 30px); 
+    font-family: 'MS', 'MS sans serif';
+}
+
+/* --- JANELAS DO SISTEMA --- */
+.summary, .preamble, .explanation, .participation, .benefits, .requirements, footer, .design-selection, .design-archives, .zen-resources, .voltar {
+    background-color: var(--win-bg);
+    border-top: 2px solid var(--border-light);
+    border-left: 2px solid var(--border-light);
+    border-right: 2px solid var(--border-dark);
+    border-bottom: 2px solid var(--border-dark);
+    box-shadow: inset 1px 1px var(--border-mid-light), inset -1px -1px var(--border-mid);
+    padding: 0 10px 10px 10px;
+    margin: 10px;
+}
+
+/* Espaçamento interno das seções */
+.main > div, .sidebar > div {
+    display: grid;
+    gap: 15px; 
+}
+
+/* --- BARRAS DE TÍTULO AZUIS --- */
+h3, .barra {
+    background-color: var(--title-bar-bg);
+    color: var(--title-bar-text);
+    font-weight: bold;
+    padding: 3px 5px;
+    font-size: 14px;
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    /* Margem negativa puxa a barra para encostar nas bordas */
+    margin: 0 -10px 10px -10px;
+}
+
+/* --- MINIMIZAR, MAXIMIZAR E FECHAR --- */
+.barra::after, h3::after {
+    /* \00A0 para ajustar o espaçamento dos simbolos*/
+    content: "_\00A0\00A0\00A0\00A0\00A0\2750\00A0\00A0\00A0\00A0X"; 
+    display: grid;
+    place-items: center;
+    width: 80px; 
+    height: 20px; 
+    color: var(--win-text);
+    font-family: 'MS', 'MS sans serif';
+    font-size: 16px;
+    line-height: 1;
+    cursor: default;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    /* criar simulação de caixas separadas atravez da manipulação do gradiante da cor de fundo*/
+    background-image:
+        linear-gradient(to top, var(--border-dark) 0, var(--border-dark) 2px, var(--border-mid) 1px, var(--border-mid) 2px, transparent 2px),
+        linear-gradient(to left, var(--border-dark) 0, var(--border-dark) 2px, var(--border-mid) 1px, var(--border-mid) 2px, transparent 2px),
+        linear-gradient(to bottom, var(--border-light) 0, var(--border-light) 2px, var(--border-mid-light) 1px, var(--border-mid-light) 2px, transparent 2px),
+        linear-gradient(to right, var(--border-light) 0, var(--border-light) 2px, var(--border-mid-light) 1px, var(--border-mid-light) 2px, transparent 2px),
+        linear-gradient(var(--win-bg), var(--win-bg));
+    background-size: 25px 20px;
+    background-repeat: space no-repeat;
+}
+
+/* --- CONTEÚDO DA CAIXA DE ALERTA --- */
+
+.alert-content {
+    display: grid;
+    /* max-content deixa a 1ª coluna com o tamanho exato da imagem. 1fr faz o texto ocupar o resto */
+    grid-template-columns: max-content 1fr; 
+    align-items: center; 
+    gap: 20px; 
+    padding: 10px;
+}
+
+/* --- IMAGEM DE ALERTA --- */
+img.alert, .alert {
+    /* Tamanho responsivo: começa em 32px, cresce um pouco e para em 48px */
+    width: clamp(32px, 5vw, 48px);
+    height: auto;
+    image-rendering: pixelated;
+}
+
+/* --- LISTAS E BOTÕES --- */
+nav ul, .zen-resources ul {
+    list-style: none;
+    display: grid;
+    gap: 8px;
+    padding: 10px 0;
+}
+
+/* Estilizando links como Botões do Windows */
+nav ul li a, .zen-resources ul li a, footer a, .ok {
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    color: var(--win-text);
+    background-color: var(--win-bg);
+    padding: 5px 10px;
+    border-top: 2px solid var(--border-light);
+    border-left: 2px solid var(--border-light);
+    border-right: 2px solid var(--border-dark);
+    border-bottom: 2px solid var(--border-dark);
+    box-shadow: inset 1px 1px var(--border-mid-light), inset -1px -1px var(--border-mid);
+}
+
+.ok {
+    max-width: 60px;
+    max-height: 30px;
+    margin: auto;
+}
+
+/* Efeito de clique do botão */
+nav ul li a:active, .zen-resources ul li a:active, footer a:active {
+    border-top: 2px solid var(--border-dark);
+    border-left: 2px solid var(--border-dark);
+    border-right: 2px solid var(--border-light);
+    border-bottom: 2px solid var(--border-light);
+    box-shadow: inset 1px 1px var(--border-mid), inset -1px -1px var(--border-mid-light);
+    padding: 6px 9px 4px 11px;
+}
+
+/* --- RODAPÉ --- */
+footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Botões se organizam em grid fluído */
+    gap: 10px;
+    padding: 10px;
+    margin-top: 20px;
+}
