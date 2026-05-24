@@ -66,6 +66,7 @@ a:hover {
         'footer';
     gap: var(--page-gap);
     padding: var(--page-pad);
+    padding-bottom: 60px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -163,7 +164,7 @@ header h2 {
 }
 
 /* --- JANELAS DO SISTEMA --- */
-.summary, .preamble, .explanation, .participation, .benefits, .requirements, footer, .design-selection, .design-archives, .zen-resources, .voltar {
+.summary, .preamble, .explanation, .participation, .benefits, footer, .requirements, .design-selection, .design-archives, .zen-resources, .voltar {
     background-color: var(--win-bg);
     border-top: 2px solid var(--border-light);
     border-left: 2px solid var(--border-light);
@@ -291,9 +292,46 @@ nav ul li a:active, .zen-resources ul li a:active, footer a:active {
 
 /* --- RODAPÉ --- */
 footer {
+    /* Tira o footer do Grid da página e fixa na tela do navegador */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1000;
+    margin: 0; 
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Botões se organizam em grid fluído */
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); 
     gap: 10px;
-    padding: 10px;
-    margin-top: 20px;
+    padding: 5px 10px; /* Padding um pouco menor para simular a barra do Windows */
+}
+
+footer::before {
+    content: "";
+    display: inline-block; 
+    background-image: url(images/start.jpg);
+    background-size: contain; /* 'contain' faz a imagem caber sem distorcer */
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle; 
+    margin-left: -100px;
+}
+
+footer::after {
+    content: "19:20";
+    background-image: url(images/speaker.png);
+    background-repeat: no-repeat;
+    text-align: right;
+    max-width: 60px;
+    min-width: 60px;
+    border-top: 2px solid var(--border-dark);
+    border-left: 2px solid var(--border-dark);
+    border-right: 2px solid var(--border-light);
+    border-bottom: 2px solid var(--border-light);
+    box-shadow: inset 1px 1px var(--border-mid), inset -1px -1px var(--border-mid-light);
+    padding: 6px 9px 4px 11px;
+    margin-left: 90px;
 }
