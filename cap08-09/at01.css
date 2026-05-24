@@ -109,6 +109,16 @@ a:hover {
         margin: 0; 
     }
 
+    .design-selection ul li {
+        display: grid;
+        grid-template-columns: 8fr 1fr 8fr; /* Organiza a lista na forma 'Titulo' 'by' 'Autor'*/
+        gap: 15px;
+    }
+
+    .design-archives ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 /* Mapeamento das áreas */
@@ -143,11 +153,13 @@ header h1 {
     font-weight: bold;
     letter-spacing: -0.03em;
     line-height: 1.1;
+    text-shadow: 2px 2px 0px white;
 }
 
 header h2 {
     font-size: clamp(8px, 3vw, 30px); 
     font-family: 'MS', 'MS sans serif';
+    text-shadow: 1px 1px 0px white;
 }
 
 /* --- JANELAS DO SISTEMA --- */
@@ -161,6 +173,7 @@ header h2 {
     padding: 0 10px 10px 10px;
     margin: 10px;
 }
+
 
 /* Espaçamento interno das seções */
 .main > div, .sidebar > div {
@@ -223,7 +236,7 @@ h3, .barra {
 /* --- IMAGEM DE ALERTA --- */
 img.alert, .alert {
     /* Tamanho responsivo: começa em 32px, cresce um pouco e para em 48px */
-    width: clamp(32px, 5vw, 48px);
+    width: clamp(48px, 5vw, 64px);
     height: auto;
     image-rendering: pixelated;
 }
