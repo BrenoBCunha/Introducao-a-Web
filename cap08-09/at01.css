@@ -317,7 +317,7 @@ footer::before {
     background-repeat: no-repeat;
     background-position: center;
     vertical-align: middle; 
-    margin-left: -100px;
+    margin-left: -7vw;
 }
 
 footer::after {
@@ -333,5 +333,5 @@ footer::after {
     border-bottom: 2px solid var(--border-light);
     box-shadow: inset 1px 1px var(--border-mid), inset -1px -1px var(--border-mid-light);
     padding: 6px 9px 4px 11px;
-    margin-left: 90px;
+    margin-left: 7vw;
 }
