@@ -306,7 +306,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20px, 1fr)); 
     gap: 1vw;
-    padding: 5px 10px; /* Padding um pouco menor para simular a barra do Windows */
+    padding: 5px 10px; 
 }
 
 footer::before {
@@ -315,23 +315,16 @@ footer::before {
     background-image: url(images/start.jpg);
     background-size: contain; /* 'contain' faz a imagem caber sem distorcer */
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: left;
     vertical-align: middle; 
-    margin-left: -7vw;
 }
 
 footer::after {
-    content: "19:20";
-    background-image: url(images/speaker.png);
+    content: "";
+    display: inline-block; 
+    background-image: url(images/hora.jpeg);
+    background-size: contain; /* 'contain' faz a imagem caber sem distorcer */
     background-repeat: no-repeat;
-    text-align: right;
-    max-width: 60px;
-    min-width: 60px;
-    border-top: 2px solid var(--border-dark);
-    border-left: 2px solid var(--border-dark);
-    border-right: 2px solid var(--border-light);
-    border-bottom: 2px solid var(--border-light);
-    box-shadow: inset 1px 1px var(--border-mid), inset -1px -1px var(--border-mid-light);
-    padding: 6px 9px 4px 11px;
-    margin-left: 7vw;
+    background-position: right;
+    vertical-align: middle; 
 }
