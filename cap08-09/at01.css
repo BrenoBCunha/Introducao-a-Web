@@ -305,7 +305,7 @@ footer {
 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); 
-    gap: 10px;
+    gap: 1vw;
     padding: 5px 10px; /* Padding um pouco menor para simular a barra do Windows */
 }
 
