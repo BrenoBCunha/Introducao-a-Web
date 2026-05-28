@@ -7,13 +7,13 @@ Breno Barbosa da Cunha
 Desktop Windows 98
 
 ## Design de Referência
-Mid Century Modern
+Design Original
 
 ## Link de Referência
 https://www.csszengarden.com/221/
 
 ## Descrição
-O projeto utiliza CSS Grid para a estrutura principal e Flexbox para menus e blocos internos.
+O projeto utiliza somente CSS Grid para a estrutura principal, menus e blocos internos.
 
 ## Recursos Utilizados
 - CSS Grid

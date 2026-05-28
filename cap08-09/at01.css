@@ -226,7 +226,7 @@ h3 {
 /* --- MINIMIZAR, MAXIMIZAR E FECHAR --- */
 h3::after, .summary::after{
     /* \00A0 para ajustar o espaçamento dos simbolos*/
-    content: "🗕\00A0\00A0\00A0\00A0\00A0🗖\00A0\00A0\00A0\00A0🗙"; 
+    content: "\1F5D5\00A0\00A0\00A0\00A0\00A0\1F5D6\00A0\00A0\00A0\00A0\1F5D9"; 
     display: grid;
     place-items: center;
     width: 80px; 
