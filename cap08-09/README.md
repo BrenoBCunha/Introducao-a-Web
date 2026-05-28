@@ -1,10 +1,10 @@
 # Projeto CSS Zen Garden
 
 ## Autor
-João da Silva
+Breno Barbosa da Cunha
 
 ## Tema
-Cyberpunk Futurista
+Desktop Windows 98
 
 ## Design de Referência
 Mid Century Modern

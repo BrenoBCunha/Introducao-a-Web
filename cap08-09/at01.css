@@ -103,13 +103,6 @@ a:hover {
         align-self: start;
     }
 
-    .voltar {
-        grid-column: 2 / 3;
-        grid-row: 1 / 3; 
-        max-width: none; 
-        margin: 0; 
-    }
-
     .design-selection ul li {
         display: grid;
         grid-template-columns: 8fr 1fr 8fr; /* Organiza a lista na forma 'Titulo' 'by' 'Autor'*/
@@ -130,7 +123,7 @@ footer { grid-area: footer; }
 
 /* --- HEADER FULL-SCREEN (100VW / 100VH) --- */
 .intro {
-    background: #008080 url(images/windows-xp-pixel-art-by-v0-02dw11nuqf681.webp) no-repeat center center fixed;
+    background: #008080 url(images/wallpapaer.jpg) no-repeat center center fixed;
     background-size: cover;
     image-rendering: pixelated;
     width: 100vw;
@@ -164,7 +157,7 @@ header h2 {
 }
 
 /* --- JANELAS DO SISTEMA --- */
-.summary, .preamble, .explanation, .participation, .benefits, footer, .requirements, .design-selection, .design-archives, .zen-resources, .voltar {
+.summary, .preamble, .explanation, .participation, .benefits, footer, .requirements, .design-selection, .design-archives, .zen-resources {
     background-color: var(--win-bg);
     border-top: 2px solid var(--border-light);
     border-left: 2px solid var(--border-light);
@@ -175,6 +168,38 @@ header h2 {
     margin: 10px;
 }
 
+/*  CRIAÇÃO DA BARRA DE TÍTULO PARA O SUMÁRIO (APENAS CSS)*/
+
+.summary {
+    position: relative !important;
+    padding-top: 32px !important; 
+    max-width: 300px;
+    margin: auto;
+    margin-right: 15vw;
+}
+
+/* Desenha a Barra Azul de Título */
+.summary::before {
+    content: "Sumário do Sistema"; 
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    right: 1px;
+    height: 22px;
+    background-color: var(--title-bar-bg);
+    color: var(--title-bar-text);
+    font-family: MS, sans-serif;
+    font-size: 14px;
+    padding-left: 6px;
+    line-height: 22px;
+    box-sizing: border-box;
+}
+
+.preamble {
+    max-width: 500px;
+    margin: auto;
+    margin-left: 10vw;
+}
 
 /* Espaçamento interno das seções */
 .main > div, .sidebar > div {
@@ -183,7 +208,7 @@ header h2 {
 }
 
 /* --- BARRAS DE TÍTULO AZUIS --- */
-h3, .barra {
+h3 {
     background-color: var(--title-bar-bg);
     color: var(--title-bar-text);
     font-weight: bold;
@@ -196,10 +221,12 @@ h3, .barra {
     margin: 0 -10px 10px -10px;
 }
 
+
+
 /* --- MINIMIZAR, MAXIMIZAR E FECHAR --- */
-.barra::after, h3::after {
+h3::after, .summary::after{
     /* \00A0 para ajustar o espaçamento dos simbolos*/
-    content: "_\00A0\00A0\00A0\00A0\00A0\2750\00A0\00A0\00A0\00A0X"; 
+    content: "🗕\00A0\00A0\00A0\00A0\00A0🗖\00A0\00A0\00A0\00A0🗙"; 
     display: grid;
     place-items: center;
     width: 80px; 
@@ -223,23 +250,12 @@ h3, .barra {
     background-repeat: space no-repeat;
 }
 
-/* --- CONTEÚDO DA CAIXA DE ALERTA --- */
 
-.alert-content {
-    display: grid;
-    /* max-content deixa a 1ª coluna com o tamanho exato da imagem. 1fr faz o texto ocupar o resto */
-    grid-template-columns: max-content 1fr; 
-    align-items: center; 
-    gap: 20px; 
-    padding: 10px;
-}
-
-/* --- IMAGEM DE ALERTA --- */
-img.alert, .alert {
-    /* Tamanho responsivo: começa em 32px, cresce um pouco e para em 48px */
-    width: clamp(48px, 5vw, 64px);
-    height: auto;
-    image-rendering: pixelated;
+/* --- POSICIONAMENTO DOS BOTÕES DE MINIMIZAR, MAXIMIZAR E FECHAR PARA O SUMARIO --- */
+.summary::after {
+    position: absolute;
+    top: 3px;   
+    right: 3px; 
 }
 
 /* --- LISTAS E BOTÕES --- */
@@ -251,7 +267,7 @@ nav ul, .zen-resources ul {
 }
 
 /* Estilizando links como Botões do Windows */
-nav ul li a, .zen-resources ul li a, footer a, .ok {
+nav ul li a, .zen-resources ul li a, footer a {
     display: grid;
     place-items: center;
     text-decoration: none;
@@ -263,21 +279,6 @@ nav ul li a, .zen-resources ul li a, footer a, .ok {
     border-right: 2px solid var(--border-dark);
     border-bottom: 2px solid var(--border-dark);
     box-shadow: inset 1px 1px var(--border-mid-light), inset -1px -1px var(--border-mid);
-}
-
-.ok {
-    max-width: 60px;
-    max-height: 30px;
-    margin: auto;
-}
-
-.ok a {
-    text-decoration: none;
-    color: #000000;
-}
-
-.ok a:hover {
-    color: #ff0000;
 }
 
 /* Efeito de clique do botão */
