@@ -1,0 +1,439 @@
+/* ==========================================================================
+   1. Variáveis e Suporte a Dark Mode 
+   ========================================================================== */
+:root {
+    /* Paleta de Cores Padrão (Claro) */
+    --bg-color: #ffffff;
+    --bg-alt-color: #f9f9f9;
+    --text-color: #333333;
+    --text-muted: #666666;
+    --header-bg: #00a0e3; 
+    --footer-bg: #2b3a7a; 
+    --btn-blue: #2b3a7a;
+    --btn-blue-hover: #1e295d;
+    --btn-green: #a4c03b;
+    --btn-green-hover: #8da631;
+    --divider-color: #cccccc;
+}
+
+/* Suporte a Dark Mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #121212;
+        --bg-alt-color: #1e1e1e;
+        --text-color: #f5f5f5;
+        --text-muted: #aaaaaa;
+        --header-bg: #007bb5;
+        --footer-bg: #1a2347;
+        --btn-blue: #3b4e9e;
+        --btn-blue-hover: #4c63bf;
+        --btn-green: #8da631;
+        --btn-green-hover: #a4c03b;
+        --divider-color: #444444;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+h2 {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.subtitle {
+    text-align: center;
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+/* ==========================================================================
+   3. Header e Navegação
+   ========================================================================== */
+
+.site-header {
+    background-color: var(--header-bg);
+    padding: 1rem;
+    display: grid;
+    /* Divide o header em duas colunas no mobile: Logo à esquerda, Menu à direita */
+    grid-template-columns: max-content max-content; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-icon {
+    height: 90px;
+}
+
+/* --- Estilo do Menu Sanduíche --- */
+.menu-toggle {
+    display: grid;
+    gap: 6px;
+    background: transparent;
+    border: 2px solid #005a8a; 
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    width: 50px;
+    height: 45px;
+    place-content: center;
+}
+
+/* Linhas do menu sanduíche */
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #005a8a; 
+    border-radius: 2px;
+}
+
+.main-nav {
+    display: none; 
+}
+
+.main-nav ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(auto, max-content));
+    justify-content: center;
+    gap: 10px;
+}
+
+.main-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    padding: 0.5rem;
+}
+
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   4. Hero Section
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    height: 200px;
+    background: url('assets/images/hero-bg.webp') center/cover no-repeat;
+    display: grid;
+    place-items: center; 
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Ajuste no dark mode para o overlay da imagem não ficar tão claro */
+@media (prefers-color-scheme: dark) {
+    .hero-overlay {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-logo {
+    max-height: 80px;
+}
+
+/* ==========================================================================
+   5. Grid de Serviços (CSS Grid)
+   ========================================================================== */
+.services-section {
+    padding: 3rem 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+.center-group h2 {
+    margin-bottom: 2rem;
+}
+
+.buttons-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile começa com 1 coluna */
+    gap: 1rem;
+    align-items: center;
+    justify-items: center;
+}
+
+/* Estilos de Botões */
+.btn {
+    display: grid;
+    place-items: center; 
+    width: 100%;
+    max-width: 250px;
+    min-height: 80px;
+    padding: 0.75rem;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease;
+    font-size: 1.25rem;
+}
+
+.btn-blue {
+    background-color: var(--btn-blue);
+}
+.btn-blue:hover {
+    background-color: var(--btn-blue-hover);
+}
+
+.btn-green {
+    background-color: var(--btn-green);
+}
+.btn-green:hover {
+    background-color: var(--btn-green-hover);
+}
+
+.btn-image {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+.btn-image img {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.section-divider {
+    border: none;
+    border-top: 1px solid var(--divider-color);
+    margin: 3rem 0;
+}
+
+/* ==========================================================================
+   6. Sessão de Novidades 
+   ========================================================================== */
+.news-section {
+    background-color: var(--footer-bg);
+    padding: 3rem 0;
+    color: #ffffff;
+}
+
+.news-section h2 {
+    color: #ffffff;
+    margin-bottom: 2rem;
+}
+
+.carousel-container {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr) max-content; 
+    align-items: center;
+    justify-items: center;
+    gap: 0.5rem; 
+    padding: 0 1rem;
+}
+
+.carousel-track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%; 
+    gap: 10rem;
+    overflow-x: auto;
+    width: 100%;
+    justify-items: center; 
+    scroll-snap-type: x mandatory; 
+    scrollbar-width: none; /* Esconde scrollbar Firefox */
+}
+
+.carousel-track::-webkit-scrollbar {
+    display: none; /* Esconde scrollbar Chrome/Safari */
+}
+
+/* Aplica o snap em cada botão/item dentro do carrossel */
+.carousel-track > * {
+    scroll-snap-align: center;
+    width: 100%;
+}
+
+.carousel-arrow {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 2.5rem; 
+    font-weight: 300; 
+    cursor: pointer;
+    padding: 0 0.5rem;
+    display: grid;
+    place-items: center;
+}
+
+/* ==========================================================================
+   7. Sessão SIC
+   ========================================================================== */
+.sic-section {
+    padding: 3rem 0;
+}
+
+.sic-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    justify-items: center;
+}
+
+.sic-grid img {
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* ==========================================================================
+   8. Footer
+   ========================================================================== */
+.site-footer {
+    background-color: var(--footer-bg);
+    color: #ffffff;
+    padding: 3rem 0;
+    border-top: 2px solid var(--btn-blue-hover);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr; /* Coluna única no mobile */
+    justify-items: center;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.footer-logo img {
+    max-height: 100px;
+}
+
+.footer-info p {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    color: #eeeeee;
+}
+
+/* ==========================================================================
+   9. Breakpoints Responsivos
+   ========================================================================== */
+
+/* Breakpoint 1: Tablets em pé (Min-width: 576px) */
+@media (min-width: 576px) {
+    .buttons-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .sic-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Breakpoint 2: Tablets deitados / Laptops pequenos (Min-width: 768px) */
+@media (min-width: 768px) {
+    .site-header {
+        /* Altera para 3 colunas: Logo, Menu centralizado, Espaço vazio na direita para balancear */
+        grid-template-columns: max-content 1fr max-content; 
+        padding: 1rem 3rem;
+    }
+
+    /* Esconde o botão sanduíche no desktop */
+    .menu-toggle {
+        display: none;
+    }
+
+    /* Mostra a navegação padrão e a centraliza */
+    .main-nav {
+        display: grid;
+        justify-self: center; /* Alinha o menu ao centro do header */
+    }
+
+    .main-nav ul {
+        /* Garante que os links fiquem estritamente um ao lado do outro */
+        grid-auto-flow: column; 
+        gap: 30px; /* Aumentado o gap para melhor leitura no desktop */
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .buttons-grid.grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .hero-section {
+        height: 250px;
+    }
+    
+    .footer-content {
+        grid-template-columns: max-content 1fr;
+        align-items: center;
+        text-align: left;
+        justify-items: start;
+        padding: 0 3rem;
+    }
+
+    .carousel-track {
+        grid-auto-columns: max-content;
+        justify-content: center;
+    }
+}
+
+/* Breakpoint 3: Desktops (Min-width: 1024px) */
+@media (min-width: 1024px) {
+    .container {
+        padding: 0;
+    }
+
+    .sic-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .hero-section {
+        height: 300px;
+    }
+    
+    .hero-logo {
+        max-height: 120px;
+    }
+}
