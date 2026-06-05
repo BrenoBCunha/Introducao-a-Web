@@ -1,19 +1,19 @@
 # Projeto — Recriação Responsiva
 
 ## Autor
-João da Silva
+Breno Barbosa da Cunha
 
 ## Site Escolhido
-Spotify
+SEI Alagoas
 
 ## Link do Site
-https://spotify.com
+https://portal.sei.al.gov.br/
 
 ## Objetivo
-Criar uma versão responsiva inspirada na homepage do Spotify.
+Criar uma versão responsiva inspirada na homepage do SEI Alagoas.
 
 ## Estratégia Responsiva
-Mobile-first utilizando Flexbox e CSS Grid.
+Mobile-first utilizando CSS Grid.
 
 ## Breakpoints
 - 768px
@@ -22,7 +22,6 @@ Mobile-first utilizando Flexbox e CSS Grid.
 
 ## Recursos Utilizados
 - CSS Grid
-- Flexbox
 - clamp()
 - prefers-color-scheme
 - Media Queries
@@ -31,4 +30,4 @@ Mobile-first utilizando Flexbox e CSS Grid.
 O layout foi simplificado para melhor adaptação mobile.
 
 ## Dificuldades
-Implementação da hero section responsiva.
+Menu sanduiche para dispositivos mobile
