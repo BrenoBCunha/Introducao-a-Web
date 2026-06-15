@@ -1,0 +1,187 @@
+/* ==========================
+   ESTILO GERAL
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ==========================
+   CABEÇALHO
+========================== */
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #1f4e79;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #666;
+}
+
+/* ==========================
+   SEÇÕES
+========================== */
+
+section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+section h2 {
+    margin-bottom: 15px;
+    color: #1f4e79;
+}
+
+hr {
+    display: none;
+}
+
+/* ==========================
+   PERFIL
+========================== */
+
+#perfil {
+    text-align: center;
+}
+
+#fotoPerfil {
+    border-radius: 50%;
+    margin: 15px 0;
+    border: 4px solid #1f4e79;
+}
+
+#nomePerfil {
+    margin-bottom: 10px;
+}
+
+#biografiaPerfil {
+    margin-top: 10px;
+}
+
+/* Destaque do perfil */
+
+.perfil-destaque {
+    border: 3px solid #ff9800;
+    background-color: #fff8e6;
+    box-shadow: 0 0 20px rgba(255, 152, 0, 0.4);
+}
+
+/* ==========================
+   FORMULÁRIOS
+========================== */
+
+input,
+select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="range"] {
+    width: 250px;
+}
+
+/* ==========================
+   BOTÕES
+========================== */
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 6px;
+    background-color: #1f4e79;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #163a5c;
+    transform: translateY(-2px);
+}
+
+/* ==========================
+   RODAPÉ
+========================== */
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+/* ==========================
+   TEMA ESCURO
+========================== */
+
+.tema-escuro {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+.tema-escuro section {
+    background-color: #2d2d2d;
+}
+
+.tema-escuro h1,
+.tema-escuro h2 {
+    color: #7ab8ff;
+}
+
+.tema-escuro button {
+    background-color: #444;
+}
+
+.tema-escuro button:hover {
+    background-color: #666;
+}
+
+/* ==========================
+   TEMA AZUL
+========================== */
+
+.tema-azul {
+    background-color: #dbeeff;
+}
+
+.tema-azul section {
+    background-color: #eef7ff;
+}
+
+.tema-azul h1,
+.tema-azul h2 {
+    color: #004a99;
+}
+
+.tema-azul button {
+    background-color: #0066cc;
+}
+
+.tema-azul button:hover {
+    background-color: #004d99;
+}
