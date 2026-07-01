@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1f2937;
+}
+
+main {
+    max-width: 760px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+}
+
+fieldset {
+    margin-bottom: 18px;
+    padding: 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+}
+
+legend {
+    font-weight: bold;
+}
+
+label,
+p {
+    display: block;
+    margin-top: 12px;
+}
+
+input,
+select,
+textarea,
+button {
+    width: 100%;
+    margin-top: 6px;
+    padding: 10px;
+    font: inherit;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+button {
+    margin-top: 10px;
+    color: #ffffff;
+    background: #2563eb;
+    border: 0;
+    cursor: pointer;
+}
+
+button[type="reset"] {
+    background: #64748b;
+}
+
+.erro {
+    display: block;
+    min-height: 18px;
+    margin-top: 4px;
+    color: #dc2626;
+    font-size: 0.9rem;
+}
+
+.valido {
+    border-color: #16a34a;
+}
+
+.invalido {
+    border-color: #dc2626;
+}
+
+#forcaSenha {
+    margin-top: 6px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+#previewFoto {
+    display: none;
+    max-width: 140px;
+    margin-top: 10px;
+    border-radius: 6px;
+}
+
+#sucesso {
+    text-align: center;
+    color: #16a34a;
+    font-weight: bold;
+}

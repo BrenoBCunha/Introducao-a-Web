@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição de Aluno</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main>
+        <h1>Inscrição de Aluno</h1>
+        <form id="formCadastro" novalidate>
+            <fieldset>
+                <legend>Dados pessoais</legend>
+
+                <label for="nome">Nome completo</label>
+                <input type="text" id="nome" name="nome" required minlength="3" maxlength="80" placeholder="Digite seu nome completo">
+                <span id="erroNome" class="erro"></span>
+
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required maxlength="80" placeholder="exemplo@email.com">
+                <span id="erroEmail" class="erro"></span>
+
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" name="telefone" required maxlength="15" placeholder="(82) 99999-9999">
+                <span id="erroTelefone" class="erro"></span>
+
+                <label for="nascimento">Data de nascimento</label>
+                <input type="date" id="nascimento" name="nascimento" required>
+                <span id="erroNascimento" class="erro"></span>
+            </fieldset>
+
+            <fieldset>
+                <legend>Curso</legend>
+
+                <label for="curso">Curso</label>
+                <select id="curso" name="curso" required>
+                    <option value="">Selecione</option>
+                    <option>Informática</option>
+                    <option>Administração</option>
+                    <option>Enfermagem</option>
+                    <option>Segurança do Trabalho</option>
+                </select>
+                <span id="erroCurso" class="erro"></span>
+
+                <p>Turno</p>
+                <input type="radio" id="manha" name="turno" value="Manhã" required>
+                <label for="manha">Manhã</label>
+                <input type="radio" id="tarde" name="turno" value="Tarde">
+                <label for="tarde">Tarde</label>
+                <input type="radio" id="noite" name="turno" value="Noite">
+                <label for="noite">Noite</label>
+                <span id="erroTurno" class="erro"></span>
+
+                <p>Áreas de interesse</p>
+                <input type="checkbox" id="programacao" name="interesses" value="Programação">
+                <label for="programacao">Programação</label>
+                <input type="checkbox" id="redes" name="interesses" value="Redes">
+                <label for="redes">Redes</label>
+                <input type="checkbox" id="robotica" name="interesses" value="Robótica">
+                <label for="robotica">Robótica</label>
+                <input type="checkbox" id="gestao" name="interesses" value="Gestão">
+                <label for="gestao">Gestão</label>
+                <span id="erroInteresses" class="erro"></span>
+            </fieldset>
+
+            <fieldset>
+                <legend>Acesso e mensagem</legend>
+
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" required minlength="8" placeholder="Mínimo 8 caracteres">
+                <div id="forcaSenha"></div>
+                <span id="erroSenha" class="erro"></span>
+
+                <label for="confirmarSenha">Confirmar senha</label>
+                <input type="password" id="confirmarSenha" name="confirmarSenha" required placeholder="Repita a senha">
+                <span id="erroConfirmarSenha" class="erro"></span>
+
+                <label for="foto">Foto</label>
+                <input type="file" id="foto" name="foto" accept=".jpg,.jpeg,.png,image/jpeg,image/png">
+                <img id="previewFoto" alt="Preview da foto">
+                <span id="erroFoto" class="erro"></span>
+
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" required minlength="50" maxlength="500" placeholder="Escreva sua mensagem"></textarea>
+                <small><span id="contadorMensagem">0</span>/500 caracteres</small>
+                <span id="erroMensagem" class="erro"></span>
+            </fieldset>
+
+            <fieldset>
+                <legend>Termos</legend>
+                <input type="checkbox" id="termos" name="termos" required>
+                <label for="termos">Aceito os termos</label>
+                <span id="erroTermos" class="erro"></span>
+            </fieldset>
+
+            <button type="submit">Enviar</button>
+            <button type="reset">Limpar</button>
+            <p id="sucesso"></p>
+        </form>
+    </main>
+    <script src="js/validacoes.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
